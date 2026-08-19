@@ -1,0 +1,17 @@
+rules_version = '2';
+
+// Reglas para el MVP de Chevruta.
+// Pegar esto en: Firebase Console > Firestore Database > Reglas.
+//
+// MVP: cualquiera puede leer y escribir en kv_store. Es intencional para
+// poder probar rápido sin un sistema de login propio, pero es una
+// superficie de riesgo real (cualquiera podría editar mensajes o perfiles
+// ajenos). Antes de invitar a más gente que un grupo chico de confianza,
+// reemplazar esto por reglas que verifiquen identidad (ver README).
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /kv_store/{docId} {
+      allow read, write: if true;
+    }
+  }
+}
