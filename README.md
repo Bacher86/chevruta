@@ -88,3 +88,4 @@ src/
   lib/storage.js       — capa de acceso a datos (get/set/list sobre Firestore)
 firestore.rules        — reglas de seguridad, pegar en Firebase Console
 ```
+ 
