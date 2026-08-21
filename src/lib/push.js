@@ -6,7 +6,7 @@ import { safeGet, safeSet } from "./storage";
 // Firebase Console → Configuración del proyecto → Cloud Messaging →
 // "Certificados push web" → Generar par de claves.
 // Sin esto, getToken() falla silenciosamente y las notificaciones no van a andar.
-const VAPID_KEY = "REEMPLAZAR_CON_TU_VAPID_KEY";
+const VAPID_KEY = "BJTru8CDlYeb5SG4fuuUDVqPrm26velAdNXxprRxnYVDzYvzTvrpr3kQDHB9QJ0oN0bY1_HnJf8W4KzQvbbYECo";
 
 // Pide permiso de notificaciones al usuario y, si acepta, guarda el token
 // FCM de este dispositivo en su perfil (soporta varios dispositivos por persona).
