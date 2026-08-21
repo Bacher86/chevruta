@@ -89,3 +89,4 @@ src/
 firestore.rules        — reglas de seguridad, pegar en Firebase Console
 ```
  
+ 
