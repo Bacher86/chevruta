@@ -1,0 +1,20 @@
+rules_version = '2';
+
+// Reglas de Chevruta.
+// Pegar esto en: Firebase Console > Firestore Database > Reglas.
+//
+// Ahora exige que la persona tenga sesión iniciada (Firebase Auth) para
+// leer o escribir cualquier dato — ya no es de acceso libre como en el
+// primer MVP. Sigue siendo un modelo permisivo entre usuarios autenticados
+// (cualquier cuenta logueada puede escribir cualquier documento de
+// kv_store), suficiente para una comunidad chica de confianza. Para más
+// escala, el siguiente paso sería reglas por dueño de documento usando
+// request.auth.uid contra el prefijo de la key (ej: solo el dueño de
+// "profile:<uid>" puede escribirlo).
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /kv_store/{docId} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+@keyframes chev-shimmer {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+@keyframes chev-confetti {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(320px) rotate(340deg); opacity: 0; }
+}
+@keyframes chev-fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.chev-fade-in {
+  animation: chev-fade-in 0.22s ease-out;
+}
+@keyframes chev-card-out {
+  to { opacity: 0; transform: translateX(-40px) rotate(-4deg); }
+}
+@keyframes chev-card-in {
+  from { opacity: 0; transform: translateX(40px) rotate(4deg); }
+  to { opacity: 1; transform: translateX(0) rotate(0deg); }
+}
+.chev-card-out { animation: chev-card-out 0.25s ease-in forwards; }
+.chev-card-in { animation: chev-card-in 0.3s ease-out; }
